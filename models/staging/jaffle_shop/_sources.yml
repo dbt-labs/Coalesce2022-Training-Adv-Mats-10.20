@@ -3,6 +3,6 @@ version: 2
 sources:
   - name: jaffle_shop
     database: raw
-    schema: jaffle_shop_ext
+    schema: jaffle_shop_original
     tables:
       - name: products
