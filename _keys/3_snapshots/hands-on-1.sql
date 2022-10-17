@@ -6,7 +6,7 @@ your file products_snapshot.sql. Add the necessary Snapshot fields to the file.
 -- file: snapshots/products_snapshots.sql
 --------
 
-{% snapshot product_snapshot %}
+{% snapshot products_snapshot %}
 {{
   config(
     target_database='advanced_materializations',
