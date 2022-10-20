@@ -1,6 +1,26 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key = 'page_view_id'
+    )
+}}
+
+
+
 with events as (
 
     select * from {{ ref('stg_events') }}
+
+    {% if is_incremental() %}
+    where collector_tstamp >= 
+    
+    
+    {# this is the timestamp max#}
+    {#(select max(max_collector_tstamp) #}
+
+    (select dateadd('day', -3, max(max_collector_tstamp))
+    from {{ this }})
+    {% endif %}
 
 ),
 
